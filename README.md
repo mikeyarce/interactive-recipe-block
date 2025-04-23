@@ -9,6 +9,10 @@ A modern WordPress recipe block that includes ingredient scaling via the WP Inte
 - List ingredients as individual blocks for easy editing
 - 100% block editor (Gutenberg) compatible
 
+## 🖼 Screenshots
+
+![Interactive Recipe Block in the editor](assets/screenshot-1.png)
+
 ## 🛠 Installation
 
 1. Download or clone this repository to your `/wp-content/plugins/interactive-recipe-block` directory.
