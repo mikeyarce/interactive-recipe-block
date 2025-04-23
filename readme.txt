@@ -1,55 +1,53 @@
 === Interactive Recipe Block ===
 Contributors:      The WordPress Contributors
-Tags:              block
+Tags:              block, recipe, cooking, ingredients
 Tested up to:      6.7
 Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-An interactive block with the Interactivity API.
+A modern WordPress recipe block that includes ingredient scaling via the WP Interactivity API.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+**Interactive Recipe Block** lets you create beautiful, interactive recipe cards in the WordPress block editor. Your readers can scale ingredient amounts up or down with a click, making it easy to adjust for any number of servings. Built with the new WP Interactivity API for a seamless, dynamic experience.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+**Features:**
+* Add a recipe title, image, description, and notes
+* List ingredients as individual blocks for easy editing
+* Interactive ingredient scaling (½×, 1×, 2×, 4×) using the WP Interactivity API
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload the plugin files to the `/wp-content/plugins/interactive-recipe-block` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-
+1. Upload the plugin files to the `/wp-content/plugins/interactive-recipe-block` directory, or install through the WordPress plugins screen.
+2. Activate the plugin through the 'Plugins' screen in WordPress.
+3. Add the "Interactive Recipe" block to any post or page using the block editor.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= How do I add a recipe? =
+Add the "Interactive Recipe" block in the editor. Fill in the recipe info, add ingredients, and publish!
 
-An answer to that question.
+= Can I customize the units or ingredient fields? =
+Yes! Units and ingredient names are text fields for maximum flexibility.
 
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+= Is this plugin compatible with all themes? =
+It uses standard block markup and CSS, so it should work with any modern theme. Some custom styling may be needed for perfect integration.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Example of the ingredient scaling from the editor screen.
 
 == Changelog ==
 
 = 0.1.0 =
-* Release
+* Initial release with interactive ingredient scaling and full block editor support
 
-== Arbitrary section ==
+== Upgrade Notice ==
 
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+= 0.1.0 =
+First public release.
+
+== Interactivity API ==
+
+This plugin uses the [WordPress Interactivity API](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-interactivity/) for real-time ingredient scaling. No page reloads, no JavaScript coding required—just instant updates for your readers.
