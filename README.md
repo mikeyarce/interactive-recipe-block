@@ -45,7 +45,7 @@ Pull requests and issues are welcome! To contribute:
 
 ## 📄 License
 
-GPL-2.0-or-later. See [LICENSE](LICENSE) for details.
+GPL-2.0-or-later.
 
 ---
 

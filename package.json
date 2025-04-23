@@ -1,8 +1,8 @@
 {
 	"name": "interactive-recipe-block",
 	"version": "0.1.0",
-	"description": "An interactive block with the Interactivity API.",
-	"author": "The WordPress Contributors",
+	"description": "An interactive recipe block for WordPress",
+	"author": "Mikey Arce",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

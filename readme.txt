@@ -1,5 +1,5 @@
 === Interactive Recipe Block ===
-Contributors:      The WordPress Contributors
+Contributors:      mikeyarce
 Tags:              block, recipe, cooking, ingredients
 Tested up to:      6.7
 Stable tag:        0.1.0
