@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/ingredient",
+  "title": "Ingredient",
+  "category": "widgets",
+  "parent": ["create-block/interactive-recipe-block"],
+  "description": "A single ingredient for the recipe block.",
+  "attributes": {
+    "amount": { "type": "number", "default": 1 },
+    "unit": { "type": "string", "default": "" },
+    "name": { "type": "string", "default": "" }
+  },
+  "textdomain": "interactive-recipe-block",
+  "editorScript": "file:./index.js",
+  "style": "file:../style.scss",
+  "render": "file:./render.php"
+} 
