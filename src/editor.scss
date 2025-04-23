@@ -18,3 +18,107 @@
 		}
 	}
 }
+
+// General editor styling
+.wp-block-marce-interactive-recipe-block {
+	.wp-block-marce-ingredient {
+		margin-bottom: 10px;
+		padding: 10px;
+		background: #ffffff;
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+		
+		&:hover {
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+		
+		&.is-selected {
+			border-color: #007cba;
+			box-shadow: 0 0 0 1px #007cba;
+		}
+		
+		// Optional ingredient styling
+		&.is-optional {
+			background-color: #f8f8f8;
+			border-style: dashed;
+			
+			.ingredient-name {
+				font-style: italic;
+				color: #666;
+			}
+		}
+		
+		// Drag handle
+		.ingredient-drag-handle {
+			color: #999;
+			cursor: grab;
+			
+			&:active {
+				cursor: grabbing;
+			}
+			
+			.drag-handle {
+				display: flex;
+				align-items: center;
+			}
+			
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+		
+		// Amount field
+		.ingredient-amount-wrapper {
+			.ingredient-amount {
+				font-weight: bold;
+				min-width: 30px;
+				text-align: center;
+				display: inline-block;
+			}
+		}
+		
+		// Unit field 
+		.ingredient-unit-wrapper {
+			.ingredient-unit {
+				color: #666;
+				min-width: 40px;
+				padding: 2px 4px;
+				display: inline-block;
+			}
+		}
+		
+		// Ingredient name field
+		.ingredient-name-wrapper {
+			.ingredient-name {
+				display: inline-block;
+				min-width: 100px;
+			}
+		}
+		
+		// Ingredient actions (optional checkbox and notes button)
+		.ingredient-actions {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-left: auto;
+			
+			.components-checkbox-control {
+				margin-bottom: 0;
+			}
+		}
+		
+		// Notes field
+		.ingredient-notes {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px dashed #eee;
+			
+			.components-text-control__input {
+				font-style: italic;
+				color: #666;
+			}
+		}
+	}
+}

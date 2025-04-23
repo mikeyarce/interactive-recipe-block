@@ -1,15 +1,21 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/ingredient",
+  "name": "marce/ingredient",
   "title": "Ingredient",
   "category": "widgets",
-  "parent": ["create-block/interactive-recipe-block"],
+  "parent": ["marce/interactive-recipe-block"],
   "description": "A single ingredient for the recipe block.",
+  "icon": "carrot",
   "attributes": {
     "amount": { "type": "number", "default": 1 },
     "unit": { "type": "string", "default": "" },
     "name": { "type": "string", "default": "" }
+  },
+  "supports": {
+    "reusable": false,
+    "html": false,
+    "customClassName": true
   },
   "textdomain": "interactive-recipe-block",
   "editorScript": "file:./index.js",

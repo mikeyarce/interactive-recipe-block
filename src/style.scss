@@ -3,7 +3,7 @@
  * and in the editor.
  */
 
-.wp-block-create-block-interactive-recipe-block {
+.wp-block-marce-interactive-recipe-block {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 	font-size: 1em;
 	background: #fff;
@@ -13,26 +13,67 @@
 	max-width: 800px;
 	margin: 0 auto;
 
-	// Recipe header section
-	.recipe-header {
+	// Recipe title
+	.recipe-title {
+		font-size: 2em;
+		margin-top: 0;
+		margin-bottom: 0.8em;
+		color: #333;
+	}
+
+	// Recipe image
+	.recipe-image {
+		margin-bottom: 1.5em;
+		max-width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 6px;
+	}
+
+	// Recipe description
+	.recipe-description {
+		font-size: 1.1em;
+		line-height: 1.6;
+		color: #444;
 		margin-bottom: 2em;
+	}
 
-		.recipe-image {
-			margin-bottom: 1.5em;
-			overflow: hidden;
-			border-radius: 6px;
-
-			img {
-				max-width: 100%;
-				height: auto;
-				display: block;
+	// Section headings
+	h3 {
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+		font-size: 1.4em;
+		color: #333;
+		border-bottom: 2px solid #eaeaea;
+		padding-bottom: 0.5em;
+	}
+	
+	// Recipe info section
+	.recipe-info {
+		background: #f9f9f9;
+		padding: 1.5em;
+		border-radius: 6px;
+		margin-bottom: 2em;
+		
+		.recipe-meta {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 1em;
+			
+			.recipe-meta-item {
+				margin-bottom: 0.5em;
+				
+				.recipe-meta-label {
+					font-weight: bold;
+					display: block;
+					margin-bottom: 0.2em;
+					color: #555;
+				}
+				
+				.recipe-meta-value {
+					color: #333;
+				}
 			}
-		}
-
-		.recipe-description {
-			font-size: 1.1em;
-			line-height: 1.6;
-			color: #444;
 		}
 	}
 
@@ -42,72 +83,20 @@
 		padding: 1.5em;
 		border-radius: 6px;
 		margin-bottom: 2em;
-
-		// Recipe scaling controls
-		.recipe-scaling-controls {
-			display: flex;
-			align-items: center;
-			margin-bottom: 1.2em;
-			flex-wrap: wrap;
-			gap: 0.8em;
-
-			.scaling-label {
-				font-weight: 600;
-				color: #555;
-				margin-right: 0.5em;
-			}
-
-			.scaling-buttons {
-				display: flex;
-				gap: 0.5em;
-
-				.scale-button {
-					background: #fff;
-					border: 1px solid #ddd;
-					border-radius: 4px;
-					padding: 0.4em 0.8em;
-					cursor: pointer;
-					font-weight: 600;
-					color: #555;
-					transition: all 0.2s ease;
-
-					&:hover {
-						background: #f0f0f0;
-						border-color: #ccc;
-					}
-
-					&.active {
-						background: #4a6eb5;
-						color: white;
-						border-color: #3a5ea5;
-					}
-				}
-			}
-		}
-
-		h3 {
-			margin-top: 0;
-			margin-bottom: 1em;
-			font-size: 1.4em;
-			color: #333;
-			border-bottom: 2px solid #eaeaea;
-			padding-bottom: 0.5em;
-		}
-
+		
 		.ingredients-list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
+			margin-top: 1em;
 		}
 	}
 
 	// Individual ingredient items
-	.recipe-ingredient-item {
-		padding: 0.5em 0;
-		border-bottom: 1px dashed #eaeaea;
+	.ingredient {
 		display: flex;
 		align-items: center;
-		gap: 0.3em;
+		padding: 0.5em 0;
+		border-bottom: 1px dashed #eaeaea;
+		margin-bottom: 0.5em;
+		gap: 0.5em;
 
 		&:last-child {
 			border-bottom: none;
@@ -115,10 +104,12 @@
 
 		.ingredient-amount {
 			font-weight: bold;
+			min-width: 30px;
 		}
 
 		.ingredient-unit {
 			color: #666;
+			min-width: 40px;
 		}
 
 		.ingredient-name {
@@ -126,37 +117,108 @@
 		}
 	}
 
-	// Dark theme styles
-	&.dark-theme {
-		background: #333;
-		color: #fff;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-
-		.recipe-header .recipe-description {
-			color: #eee;
-		}
-
-		.recipe-ingredients {
-			background: #444;
-
-			h3 {
-				color: #fff;
-				border-bottom-color: #555;
-			}
-		}
-
-		.recipe-ingredient-item {
-			border-bottom-color: #555;
-
-			.ingredient-unit {
-				color: #ccc;
-			}
-		}
-
-		button {
-			background: #555;
-			color: #fff;
-			border: 1px solid #777;
+	// Recipe notes section
+	.recipe-notes {
+		margin-bottom: 2em;
+		
+		.recipe-notes-content {
+			background: #f9f9f9;
+			padding: 1.5em;
+			border-radius: 6px;
+			color: #444;
+			font-style: italic;
+			line-height: 1.6;
 		}
 	}
+
+	// Recipe scaling controls
+	.recipe-scaling-controls {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.2em;
+		flex-wrap: wrap;
+		gap: 0.8em;
+
+		.scaling-label {
+			font-weight: 600;
+			color: #555;
+			margin-right: 0.5em;
+		}
+
+		.scaling-buttons {
+			display: flex;
+			gap: 0.5em;
+
+			.scale-button {
+				background: #fff;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				padding: 0.4em 0.8em;
+				cursor: pointer;
+				font-weight: 600;
+				color: #555;
+				transition: all 0.2s ease;
+
+				&:hover {
+					background: #f0f0f0;
+					border-color: #ccc;
+				}
+
+				&.active {
+					background: #4a6eb5;
+					color: white;
+					border-color: #3a5ea5;
+				}
+			}
+		}
+	}
+}
+
+// Front-end styling for ingredients block
+
+.wp-block-marce-interactive-recipe-block-ingredient {
+	margin-bottom: 8px;
+}
+
+.ingredient-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 5px;
+	line-height: 1.5;
+	
+	// Optional ingredient styling
+	&.ingredient-optional {
+		color: #666;
+		font-style: italic;
+		
+		.ingredient-optional-label {
+			color: #777;
+			font-style: italic;
+			font-size: 0.9em;
+			margin-left: 4px;
+		}
+	}
+}
+
+.ingredient-amount {
+	font-weight: 600;
+}
+
+.ingredient-unit {
+	margin-right: 4px;
+}
+
+.ingredient-name {
+	flex: 1;
+}
+
+.ingredient-notes {
+	font-style: italic;
+	color: #666;
+	font-size: 0.9em;
+	margin-top: 2px;
+	margin-left: 8px;
+	padding-left: 12px;
+	border-left: 2px solid #ddd;
 }

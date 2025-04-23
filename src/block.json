@@ -1,16 +1,18 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/interactive-recipe-block",
+	"name": "marce/interactive-recipe-block",
 	"version": "0.1.0",
-	"title": "Interactive Recipe Block",
+	"title": "Interactive Recipe",
 	"category": "widgets",
-	"icon": "media-interactive",
-	"description": "An interactive block with the Interactivity API.",
+	"icon": "food",
+	"description": "Add a recipe with interactive ingredient scaling.",
 	"example": {},
 	"supports": {
 		"interactivity": true,
-		"innerBlocks": true
+		"innerBlocks": true,
+		"html": false,
+		"anchor": true
 	},
 	"textdomain": "interactive-recipe-block",
 	"editorScript": "file:./index.js",
@@ -19,7 +21,14 @@
 	"render": "file:./render.php",
 	"viewScriptModule": "file:./view.js",
 	"attributes": {
+		"title": { "type": "string", "default": "" },
 		"description": { "type": "string", "default": "" },
-		"imageUrl": { "type": "string", "default": "" }
+		"imageUrl": { "type": "string", "default": "" },
+		"prepTime": { "type": "string", "default": "" },
+		"cookTime": { "type": "string", "default": "" },
+		"totalTime": { "type": "string", "default": "" },
+		"servings": { "type": "number", "default": 2 },
+		"difficulty": { "type": "string", "default": "medium" },
+		"notes": { "type": "string", "default": "" }
 	}
 }

@@ -1,30 +1,28 @@
 <?php
 /**
- * Ingredient block render callback.
+ * Render the Ingredient block
  *
- * @param array $attributes Block attributes.
- * @param string $content Block content.
- * @param WP_Block $block Block instance.
- * @return string Rendered HTML.
+ * @package marce-interactive-recipe-block
  */
 
-$amount = isset( $attributes['amount'] ) ? esc_html( $attributes['amount'] ) : '';
-$unit   = isset( $attributes['unit'] ) ? esc_html( $attributes['unit'] ) : '';
-$name   = isset( $attributes['name'] ) ? esc_html( $attributes['name'] ) : '';
+$block_wrapper_attributes = get_block_wrapper_attributes();
+$amount = isset( $attributes['amount'] ) ? $attributes['amount'] : '';
+$unit = isset( $attributes['unit'] ) ? $attributes['unit'] : '';
+$name = isset( $attributes['name'] ) ? $attributes['name'] : '';
 
-if ( ! $amount && ! $unit && ! $name ) {
-	return '';
-}
-
-// Get block wrapper attributes
-$wrapper_attributes = get_block_wrapper_attributes([
-	'class' => 'recipe-ingredient-item',
-]);
-
-return sprintf(
-	'<li %s><span class="ingredient-amount">%s</span> <span class="ingredient-unit">%s</span> <span class="ingredient-name">%s</span></li>',
-	$wrapper_attributes,
-	$amount,
-	$unit,
-	$name
-);
+?>
+<div <?php echo $block_wrapper_attributes; ?>>
+    <div class="ingredient-item" data-amount="<?php echo esc_attr( $amount ); ?>">
+        <span
+            class="ingredient-amount"
+            <?php echo wp_interactivity_data_wp_context( array( 'originalAmount' => $amount ) ); ?>
+            data-wp-text="state.scaledAmount"
+        >
+            <?php echo esc_html( $amount ); ?>
+        </span>
+        <?php if ( ! empty( $unit ) ) : ?>
+            <span class="ingredient-unit"><?php echo esc_html( $unit ); ?></span>
+        <?php endif; ?>
+        <span class="ingredient-name"><?php echo esc_html( $name ); ?></span>
+    </div>
+</div>
